@@ -13,12 +13,12 @@ import 'express-async-errors';
 
 import '../../container/index';
 
-const { SERVER_PORT } = process.env;
+const { PORT } = process.env;
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api', routes);
 
-app.listen(SERVER_PORT, () => {
-  console.log(`Server started on port ${SERVER_PORT}! ✅`);
+app.listen(PORT || 3000, () => {
+  console.log(`Server started on port ${PORT || 3000}! ✅`);
 });
